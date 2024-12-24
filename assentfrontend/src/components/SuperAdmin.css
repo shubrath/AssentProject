@@ -1,103 +1,193 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f1f5f9; /* Soft gray background */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
+.super-admin-dashboard {
+  font-family: Arial, sans-serif;
+  background-color: #f4f9fd; /* Light blue background */
   
-  .super-admin-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
+  border-radius: 8px;
   
-  .card {
-    background: #ffffff;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 90%;
-    text-align: center;
-  }
+  height: 80vh;
+  width: auto;
+}
+
+.super-admin-dashboard h2 {
+  color: #1e3a8a; /* Dark blue */
+  text-align: center;
+}
+
+.super-admin-dashboard h3 {
+  color: #1e3a8a;
+  margin-top: 20px;
+}
+
+.super-admin-dashboard button {
+  background-color: #3b82f6; /* Blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.super-admin-dashboard button:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+}
+
+.super-admin-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.super-admin-dashboard li {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.super-admin-dashboard li h4 {
+  color: #1e3a8a; /* Dark blue */
+ 
+}
+.super-admin-dashboard ul label {
+  color: #1e3a8a; /* Dark blue */
+  font-size: 18px;
   
-  .title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333333;
-  }
+ 
+}
+.super-admin-dashboard li button {
+  background-color: #f97316; /* Orange */
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.super-admin-dashboard li button:hover {
+  background-color: #ea580c; /* Darker orange on hover */
+}
+
+.super-admin-dashboard input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.super-admin-dashboard select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.super-admin-dashboard select[multiple] {
+  height: 150px;
+}
+
+.super-admin-dashboard .modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.super-admin-dashboard .modal-footer {
+  text-align: right;
+}
+
+.super-admin-dashboard .selected-entities {
+  font-size: 14px;
+  color: #4b5563; /* Dark gray */
+}
+
+/* Buttons below organizations and entities */
+.organization-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.organization-actions button {
+  margin: 10px;
+}
+/* App.css */
+
+/* Ensure full width for dropdown (select elements) */
+.select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width calculation */
+}
+
+.select:focus {
+  border-color: #1e3a8a;
+  outline: none;
+}
+
+/* Specific styles for multiple selection dropdowns */
+.select[multiple] {
+  width: 100%;
+  height: auto; /* Allow dropdown height to expand based on content */
+  background-color: #f0f4f8;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Ensure options are also properly padded */
+select[multiple] option {
+  padding: 10px;
+}
+
+.Organization {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 20px; /* Add spacing between organization and entities */
   
-  .subtitle {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  form h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #444444;
-    text-align: left;
-  }
-  
-  form div {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #555555;
-  }
-  
-  form input,
-  form textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    font-size: 14px;
-  }
-  
-  form textarea {
-    resize: none;
-    height: 80px;
-  }
-  
-  form button {
-    padding: 12px;
-    background-color: #4f46e5; /* Deep indigo */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  form button:hover {
-    background-color: #4338ca; /* Darker indigo */
-  }
-  
-  .success {
-    color: green;
-    margin-bottom: 15px;
-  }
-  
+}
+
+.Organization .organization-details {
+  margin-bottom: 10px;
+}
+
+.Organization .entities {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Organization .entities h4 {
+  color: #1e3a8a; /* Dark blue for headings */
+  margin-bottom: 10px;
+}
+
+.Organization .entities ul {
+  list-style-type: none; /* Remove default list style */
+  padding: 0;
+}
+
+.Organization .entities li {
+  margin: 8px 0;
+  padding: 6px 10px;
+  background-color: #f4f9fd; /* Light blue background */
+  border: 1px solid #d1d5db; /* Light border */
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
